@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^1.4.1",
     "mdbreact": "^4.6.0",
+    "query-string-params": "^1.7.5",
     "randomatic": "^3.0.0",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",

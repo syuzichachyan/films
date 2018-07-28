@@ -25,7 +25,7 @@ class Film extends Component {
                                                                    onClick={() => this.props.addOrDelete(film.id)}> </i></h5>
                         {film.genre_ids.map((id) => (
                             <span className="card-title" key={id}>
-                               {genres.find(el=>{return el.id===id}).name +" "}
+                               {genres.find(el=>{return el.id===id})?genres.find(el=>{return el.id===id}).name +" ":" "}
                             </span>
                         ))}
                         <h6 className="card-text">{film.release_date}

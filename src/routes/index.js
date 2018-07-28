@@ -14,7 +14,6 @@ class Routers extends Component {
                     <Route exact path="/" component={Login}/>
                     <PrivateRoute exact path="/main" component={Main}/>
                     <PrivateRoute exact path="/detail/:id" component={Detail}/>
-                    <PrivateRoute  path="/search/" component={Main}/>
                 </Switch>
             </Router>
         )

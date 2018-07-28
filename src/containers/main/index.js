@@ -12,8 +12,7 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps = (dispatch) => {
     return {
         genres:()=>dispatch(genres()),
-        filmsWithPage:(page)=>dispatch(filmsWithPage(page)),
-        multiSearch: (key,page) => dispatch(multiSearch(key,page))
+        filmsWithPage:(page)=>dispatch(filmsWithPage(page))
 
     }
 };

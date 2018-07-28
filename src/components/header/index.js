@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+import {propertyToUrl} from "query-string-params";
 import {
     Collapse,
     Dropdown,
@@ -21,13 +22,18 @@ class Header extends Component{
     constructor(props){
         super(props);
     }
-    onKeyDown =(e)=> {
+
+    onKeyDown = (e) => {
         if (e.keyCode === 13 && e.target.value.trim() !== "")
         {    const params={
                 key:e.target.value.trim(),
                 page:1
             };
+            this.props.multiSearchFunction(params.key, params.page);
 
+
+            let queryString = this.props.location.pathname + '?' + propertyToUrl(params);
+            this.props.history.push(queryString);
         }
 
     };
@@ -39,7 +45,7 @@ class Header extends Component{
                     </NavbarBrand>
                         <NavbarNav left>
                             <NavItem >
-                                <NavLink to="#">Favourites</NavLink>
+                                <NavLink to="/favourites">Favourites</NavLink>
                             </NavItem>
                         </NavbarNav>
                     <NavbarNav left>

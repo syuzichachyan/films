@@ -1,7 +1,8 @@
 import React from 'react'
 import Films from '../../components/films'
 import {connect} from 'react-redux'
-import {filmsWithPage} from "../../actions/popularFilms-action";
+import {filmsWithPage, genres} from "../../actions/popularFilms-action";
+import {multiSearch} from "../../actions/multi-Search-action";
 
 const mapStateToProps = (state) => {
     return {
@@ -9,6 +10,10 @@ const mapStateToProps = (state) => {
         multiSearch:state.multiSearch
     }
 };
+
+
+
+
 
 
 export default connect(mapStateToProps)(Films);
