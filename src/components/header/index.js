@@ -41,28 +41,22 @@ class Header extends Component{
                     <NavbarBrand href="/main">
                         <strong>Home</strong>
                     </NavbarBrand>
-                        <NavbarNav left>
-                            <NavItem >
-                                <NavLink to="/">Favourites</NavLink>
-                            </NavItem>
-                        </NavbarNav>
                     <NavbarNav left>
+                        <NavItem>
+                            <NavLink to="/">Favourites</NavLink>
+                        </NavItem>
                         <NavItem >
                             <input className="form-control" type="text" placeholder="Search" aria-label="Search" onKeyDown={this.onKeyDown}  />
                         </NavItem>
                     </NavbarNav>
-                        <NavbarNav right>
-                            <NavItem>
-                                <Dropdown>
-                                    <DropdownToggle  color="blue">
-                                    <i className="fa fa-user"> {this.props.email}</i>
-                                    </DropdownToggle>
-                                    <DropdownMenu>
-                                        <DropdownItem ><span onClick={this.props.logout}>Logout</span></DropdownItem>
-                                    </DropdownMenu>
-                                </Dropdown>
-                            </NavItem>
-                        </NavbarNav>
+                    <NavbarNav right>
+                        <NavItem>
+                            <i style={{color:"white",paddingRight:"15px"}} className="fa fa-user"> {this.props.email}</i>
+                        </NavItem>
+                        <NavItem>
+                            <span  style={{cursor:"pointer"}} onClick={this.props.logout}>Logout</span>
+                        </NavItem>
+                    </NavbarNav>
                 </Navbar>
 
         )
