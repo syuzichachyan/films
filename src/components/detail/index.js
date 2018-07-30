@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import StarRatingComponent from 'react-star-rating-component';
+import { }  from 'prop-types';
 import Header from '../../containers/header'
+import './style.css'
+
 
 
 class Detail extends Component {
@@ -8,7 +11,6 @@ class Detail extends Component {
         super(props);
 
     }
-
     isFavourite(id) {
         return this.props.favouriteFilms.indexOf(id) !== -1;
     };
@@ -47,10 +49,10 @@ class Detail extends Component {
                             />
                             <p><i className="fa fa-eye">{filmInfo.popularity}</i></p>
                             <h5>Production companies</h5>
-                            <div style={{display: "flex", flexWrap: 'wrap'}}>
+                            <div className="film"  style={{display: "flex", flexWrap: 'wrap'}}>
                                 {filmInfo.production_companies.map(el => <div key={el.id}>
                                     <span>  {el.name}</span>
-                                    {el.logo_path ? (<img className="card-img-top" style={{width: "10%"}}
+                                    {el.logo_path ? (<img className="card-img-top logo"
                                                           src={`https://image.tmdb.org/t/p/w200${el.logo_path}`}
                                                           alt="Card image cap"/>) : null}
                                 </div>)}

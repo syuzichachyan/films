@@ -1,9 +1,8 @@
-import React,{Component} from 'react'
-import  Pegination  from '../../containers/pagination';
+import React, {Component} from 'react'
+import Pegination from '../../containers/pagination';
 import Header from '../../containers/header';
 
 import Films from '../../containers/films';
-import {urlToProperty} from "query-string-params";
 
 class Main extends Component{
     constructor(props){
@@ -17,12 +16,13 @@ class Main extends Component{
 
     render(){
         return (
-            <div>
+            (this.props.popularFilmsIsFetching===false && this.props.genresIsFetching===false)?
+                (<div>
             <Header/>
             <Films search={this.props.location.search}/>
              <Pegination page={this.props.page}/>
             </div>
-        )
+                ) : (<div>Wait</div>))
 
 
     }

@@ -6,18 +6,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import {Button, Card, CardBody, Col, Container, Fa, Input, ModalFooter, Row} from 'mdbreact';
 import './style.css'
+import {isFetching} from "../../reducers/global-reducer";
 
 class Login extends Component {
 
-    componentDidMount(){
-        this.props.filmsWithPage(1);
-    }
+
 
     render() {
         const {email, apiKey,login,handleSubmit,isAuthenticated} = this.props;
         const { from } = this.props.location.state || { from: { pathname: '/main' } };
 
-        if (isAuthenticated) {
+        if (isAuthenticated ) {
             return <Redirect to={from} />;
         }
 

@@ -1,0 +1,7 @@
+.film{
+    display: flex;
+    flexWrap: wrap
+}
+.logo{
+    width: 10%;
+}

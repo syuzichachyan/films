@@ -1,4 +1,23 @@
-import {MULTI_SEARCH_FETCHING_FAILURE,MULTI_SEARCH_FETCHING_SUCCESS,GENRES_DETAIL_FETCHING_SUCCESS,GENRES_DETAIL_FETCHING_FAILURE,LOGIN_REQUEST_FAILURE, LOGIN_REQUEST_SUCCESS,FILMS_FETCHING_SUCCESS,FILMS_FETCHING_FAILURE,LOGOUT_REQUEST_SUCCESS,FILMS_DETAIL_FETCHING_SUCCESS,FILMS_DETAIL_FETCHING_FAILURE,FAVOURITE_FILMS,ADD_FAVOURITE_FILM,DELETE_FAVOURITE_FILM} from '../constants/actions'
+import {
+    ADD_FAVOURITE_FILM,
+    DELETE_FAVOURITE_FILM,
+    FAVOURITE_FILMS,
+    FILMS_DETAIL_FETCHING_FAILURE,
+    FILMS_DETAIL_FETCHING_SUCCESS,
+    FILMS_FETCHING,
+    FILMS_FETCHING_FAILURE,
+    FILMS_FETCHING_SUCCESS,
+    GENRES_DETAIL,
+    GENRES_DETAIL_FETCHING_FAILURE,
+    GENRES_DETAIL_FETCHING_SUCCESS,
+    LOGIN_REQUEST,
+    LOGIN_REQUEST_FAILURE,
+    LOGIN_REQUEST_SUCCESS,
+    LOGOUT_REQUEST_SUCCESS,
+    MULTI_SEARCH_FETCHING_FAILURE,
+    MULTI_SEARCH_FETCHING_SUCCESS,
+    MY_FAVOURITES_FETCHING_SUCCESS
+} from '../constants/actions'
 
 const initialState=null;
 
@@ -19,6 +38,7 @@ export const currentUser = (state = initialState, action) => {
 const initialStateForFilms=[];
 export const popularFilms=(state=initialStateForFilms,action)=>{
     switch(action.type){
+
         case FILMS_FETCHING_SUCCESS:{
             return action.payload
         }
@@ -71,15 +91,56 @@ export const favouriteFilms=(state=initialStateForFavouriteFilms,action)=>{
         default : return state;
     }
 };
-const initialStateFoMultiSearch=[];
-export const multiSearch=(state=initialStateFoMultiSearch,action)=>{
+const initialStateForMultiSearch = [];
+export const multiSearch = (state = initialStateForMultiSearch, action) => {
     switch(action.type){
         case MULTI_SEARCH_FETCHING_SUCCESS :{
             return action.payload
         }
         case MULTI_SEARCH_FETCHING_FAILURE:{
-            return initialState;
+            return initialStateForMultiSearch;
+        }
+        default :
+            return state;
+    }
+};
+const initialStateForMyFavourites = [];
+export const getMyFavourites = (state = initialStateForMyFavourites, action) => {
+    switch (action.type) {
+        case MY_FAVOURITES_FETCHING_SUCCESS : {
+            return action.payload
+        }
+        case MULTI_SEARCH_FETCHING_FAILURE: {
+            return initialStateForMyFavourites;
         }
         default : return state;
+    }
+};
+const initialStateForPopularFilmsIsFetching = null;
+export const popularFilmsIsFetching = (state = initialStateForPopularFilmsIsFetching, action) => {
+    switch (action.type) {
+        case FILMS_FETCHING:
+        {return true}
+        case FILMS_FETCHING_FAILURE:
+        case FILMS_FETCHING_SUCCESS:
+         {
+            return false;
+        }
+        default :
+            return state;
+    }
+};
+const initialStateForGenresIsFetching = null;
+export const genresIsFetching = (state = initialStateForGenresIsFetching, action) => {
+    switch (action.type) {
+        case GENRES_DETAIL:
+        {return true}
+        case GENRES_DETAIL_FETCHING_FAILURE:
+        case GENRES_DETAIL_FETCHING_SUCCESS:
+        {
+            return false;
+        }
+        default :
+            return state;
     }
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import {FILMS_FETCHING_FAILURE, FILMS_FETCHING_SUCCESS,FILMS_DETAIL_FETCHING_FAILURE,FILMS_DETAIL_FETCHING_SUCCESS,GENRES_DETAIL_FETCHING_FAILURE,GENRES_DETAIL_FETCHING_SUCCESS,MULTI_SEARCH_FETCHING_FAILURE,MULTI_SEARCH_FETCHING_SUCCESS} from '../constants/actions'
+import {GENRES_DETAIL,FILMS_FETCHING,FILMS_FETCHING_FAILURE, FILMS_FETCHING_SUCCESS,FILMS_DETAIL_FETCHING_FAILURE,FILMS_DETAIL_FETCHING_SUCCESS,GENRES_DETAIL_FETCHING_FAILURE,GENRES_DETAIL_FETCHING_SUCCESS,MULTI_SEARCH_FETCHING_FAILURE,MULTI_SEARCH_FETCHING_SUCCESS} from '../constants/actions'
 
 export function popularFilmsFetchingSuccess(films) {
     return {
@@ -48,6 +48,7 @@ export function multiSearchFetchingFailure() {
 }
 
 export const genres = () => (dispatch,getState ) => {
+    dispatch({type:GENRES_DETAIL});
     const apiKey=getState().currentUser.apiKey;
     return(fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US`).then(genres => genres.json()).then(genres=>genres.genres).then(genres => {
         localStorage.setItem("genres",JSON.stringify(genres));
@@ -59,19 +60,19 @@ export const genres = () => (dispatch,getState ) => {
 };
 
 export const filmsWithPage = (page=1) => (dispatch,getState) => {
-
+    dispatch({type:FILMS_FETCHING});
     return(fetch(`https://api.themoviedb.org/3/movie/popular?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US&page=${page}`).then(films => films.json()).then(films => {
         localStorage.setItem("films",JSON.stringify(films));
-        return dispatch(popularFilmsFetchingSuccess(films))
+         dispatch(popularFilmsFetchingSuccess(films))
     }).catch(error => {
         console.log(error);
         dispatch(popularFilmsFetchingFailure())
     }))
 };
-export const filmDetail = (id) => (dispatch, getState) => {
+export const filmDetail = (id) => (dispatch) => {
     return(fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US`).then(film => film.json()).then(film => {
         localStorage.setItem("filmDetail",JSON.stringify(film));
-        return dispatch(filmDetailFetchingSuccess(film))
+         dispatch(filmDetailFetchingSuccess(film))
     }).catch(error => {
         console.log(error);
         dispatch(filmDetailFetchingFailure())

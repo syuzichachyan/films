@@ -4,6 +4,7 @@ import Login from '../containers/login';
 import Main from '../containers/main';
 import PrivateRoute from '../containers/privateRouter';
 import Detail  from '../containers/detail'
+import Favourites  from '../containers/favourites'
 
 
 class Routers extends Component {
@@ -14,6 +15,7 @@ class Routers extends Component {
                     <Route exact path="/" component={Login}/>
                     <PrivateRoute exact path="/main" component={Main}/>
                     <PrivateRoute exact path="/detail/:id" component={Detail}/>
+                    <PrivateRoute exact path="/favourites" component={Favourites}/>
                 </Switch>
             </Router>
         )

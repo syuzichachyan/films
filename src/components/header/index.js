@@ -1,7 +1,4 @@
 import React, {Component} from 'react'
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
 import {propertyToUrl} from "query-string-params";
 import {
     Collapse,
@@ -17,6 +14,9 @@ import {
     NavLink
 } from 'mdbreact';
 import {withRouter} from 'react-router-dom'
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 class Header extends Component{
     constructor(props){
@@ -30,8 +30,6 @@ class Header extends Component{
                 page:1
             };
             this.props.multiSearchFunction(params.key, params.page);
-
-
             let queryString = this.props.location.pathname + '?' + propertyToUrl(params);
             this.props.history.push(queryString);
         }
@@ -40,12 +38,12 @@ class Header extends Component{
     render(){
         return(
                 <Navbar color="blue" dark expand="md" scrolling>
-                    <NavbarBrand href="/">
-                        <strong>Navbar</strong>
+                    <NavbarBrand href="/main">
+                        <strong>Home</strong>
                     </NavbarBrand>
                         <NavbarNav left>
                             <NavItem >
-                                <NavLink to="/favourites">Favourites</NavLink>
+                                <NavLink to="/">Favourites</NavLink>
                             </NavItem>
                         </NavbarNav>
                     <NavbarNav left>

@@ -1,7 +1,5 @@
 import React from 'react'
-import   {LOGIN_REQUEST,
- LOGIN_REQUEST_SUCCESS ,
- LOGIN_REQUEST_FAILURE} from '../constants/actions';
+import {LOGIN_REQUEST, LOGIN_REQUEST_FAILURE, LOGIN_REQUEST_SUCCESS} from '../constants/actions';
 
 export function loginSuccess(user){
     return {
@@ -12,7 +10,7 @@ export function loginSuccess(user){
 
 
 export const login=()=>(dispatch,getState) =>{
-
+    dispatch({type: LOGIN_REQUEST});
         try {
             let currentUser = {
                 email: getState().form.login.values.email,

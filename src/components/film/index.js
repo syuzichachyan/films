@@ -9,10 +9,12 @@ class Film extends Component {
     isFavourite(id) {
         return this.props.favouriteFilms.indexOf(id) !== -1;
     };
+
     render() {
         const {film,genres} = this.props;
         const flag = this.isFavourite(film.id);
         return (
+
             <div className="col-md-2" style={{margin: "10px"}}>
                 <div className="card" >
                     <img
@@ -22,8 +24,8 @@ class Film extends Component {
                         <h5 className="card-title">{film.title} <i className="fa fa-heart" aria-hidden="true"
                                                                    title={`${flag ? "Delete film from Foavourite films list" : "Add film to Favourite films list"}`}
                                                                    style={{color: `${flag ? "orange" : "black"}`}}
-                                                                   onClick={() => this.props.addOrDelete(film.id)}> </i></h5>
-                        {film.genre_ids.map((id) => (
+                                                                   onClick={ () => {this.props.addOrDelete(film.id);this.props.getMyFavourites(this.props.favouriteFilms)}}> </i></h5>
+                         {film.genre_ids.map((id) => (
                             <span className="card-title" key={id}>
                                {genres.find(el=>{return el.id===id})?genres.find(el=>{return el.id===id}).name +" ":" "}
                             </span>

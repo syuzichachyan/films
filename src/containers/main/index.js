@@ -3,19 +3,24 @@ import {connect} from 'react-redux'
 import Main from '../../components/main';
 import {filmsWithPage, genres} from "../../actions/popularFilms-action";
 import {multiSearch} from "../../actions/multi-Search-action";
-const mapStateToProps=(state)=>{
-    return {
-        page:state.popularFilms.page
-    }
-};
+import {genresIsFetching} from "../../reducers/global-reducer";
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        genres:()=>dispatch(genres()),
-        filmsWithPage:(page)=>dispatch(filmsWithPage(page))
+        filmsWithPage:(page)=>dispatch(filmsWithPage(page)),
+        genres:()=>dispatch(genres())
 
     }
 };
+const mapStateToProps=(state)=>{
+    return {
+        popularFilmsIsFetching:state.popularFilmsIsFetching,
+        genresIsFetching:state.genresIsFetching,
+        page:1
+
+    }
+};
+
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(Main);
