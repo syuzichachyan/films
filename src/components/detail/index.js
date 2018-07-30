@@ -20,10 +20,11 @@ class Detail extends Component {
     }
 
     render() {
-        const {filmInfo} = this.props;
-        const flag = this.isFavourite(filmInfo.id);
+        const {filmInfo,filmDetailIsFetching} = this.props;
         return (
-            <div>
+            (filmDetailIsFetching===false)?(
+
+                <div>
                 <Header/>
                 <div style={{display: "flex", flexWrap: 'wrap'}}>
                     <div className="card col-md-2">
@@ -34,8 +35,8 @@ class Detail extends Component {
                     <div className="card col-md-10">
                         <div className="card-body">
                             <h4 className="card-title">{filmInfo.title} <i className="fa fa-heart" aria-hidden="true"
-                                                                           title={`${flag ? "Delete film from Foavourite films list" : "Add film to Favourite films list"}`}
-                                                                           style={{color: `${flag ? "orange" : "black"}`}}
+                                                                           title={`${this.isFavourite(filmInfo.id) ? "Delete film from Favourite films list" : "Add film to Favourite films list"}`}
+                                                                           style={{color: `${this.isFavourite(filmInfo.id) ? "orange" : "black"}`}}
                                                                            onClick={() => this.props.addOrDelete(filmInfo.id)}> </i>
                             </h4>
 
@@ -62,7 +63,7 @@ class Detail extends Component {
                     </div>
                 </div>
             </div>
-        )
+        ):(<div>Wait</div>))
     }
 }
 

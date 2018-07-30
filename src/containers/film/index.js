@@ -2,7 +2,7 @@ import React from 'react'
 import Film from '../../components/film'
 import {connect} from 'react-redux'
 import {addOrDelete,getMyFavourites} from "../../actions/favourite_films_action";
-
+import {filmDetailIsFetching} from "../../reducers/global-reducer";
 const mapStateToProps = (state) => {
     return {
         genres: state.genres,

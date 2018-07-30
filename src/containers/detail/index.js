@@ -13,8 +13,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps=(state)=>{
     return{
         filmInfo:state.filmDetail,
-        favouriteFilms:state.favouriteFilms
-
+        favouriteFilms:state.favouriteFilms,
+        filmDetailIsFetching:state.filmDetailIsFetching
     }
 };
 

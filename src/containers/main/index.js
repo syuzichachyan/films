@@ -16,7 +16,7 @@ const mapStateToProps=(state)=>{
     return {
         popularFilmsIsFetching:state.popularFilmsIsFetching,
         genresIsFetching:state.genresIsFetching,
-        page:1
+        page:state.popularFilms?state.popularFilms.page:1
 
     }
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import {GENRES_DETAIL,FILMS_FETCHING,FILMS_FETCHING_FAILURE, FILMS_FETCHING_SUCCESS,FILMS_DETAIL_FETCHING_FAILURE,FILMS_DETAIL_FETCHING_SUCCESS,GENRES_DETAIL_FETCHING_FAILURE,GENRES_DETAIL_FETCHING_SUCCESS,MULTI_SEARCH_FETCHING_FAILURE,MULTI_SEARCH_FETCHING_SUCCESS} from '../constants/actions'
+import {FILMS_DETAIL_FETCHING,GENRES_DETAIL,FILMS_FETCHING,FILMS_FETCHING_FAILURE, FILMS_FETCHING_SUCCESS,FILMS_DETAIL_FETCHING_FAILURE,FILMS_DETAIL_FETCHING_SUCCESS,GENRES_DETAIL_FETCHING_FAILURE,GENRES_DETAIL_FETCHING_SUCCESS,MULTI_SEARCH_FETCHING_FAILURE,MULTI_SEARCH_FETCHING_SUCCESS} from '../constants/actions'
 
 export function popularFilmsFetchingSuccess(films) {
     return {
@@ -70,6 +70,7 @@ export const filmsWithPage = (page=1) => (dispatch,getState) => {
     }))
 };
 export const filmDetail = (id) => (dispatch) => {
+    dispatch({type:FILMS_DETAIL_FETCHING});
     return(fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US`).then(film => film.json()).then(film => {
         localStorage.setItem("filmDetail",JSON.stringify(film));
          dispatch(filmDetailFetchingSuccess(film))

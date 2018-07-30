@@ -2,6 +2,7 @@ import {
     ADD_FAVOURITE_FILM,
     DELETE_FAVOURITE_FILM,
     FAVOURITE_FILMS,
+    FILMS_DETAIL_FETCHING,
     FILMS_DETAIL_FETCHING_FAILURE,
     FILMS_DETAIL_FETCHING_SUCCESS,
     FILMS_FETCHING,
@@ -137,6 +138,21 @@ export const genresIsFetching = (state = initialStateForGenresIsFetching, action
         {return true}
         case GENRES_DETAIL_FETCHING_FAILURE:
         case GENRES_DETAIL_FETCHING_SUCCESS:
+        {
+            return false;
+        }
+        default :
+            return state;
+    }
+};
+
+const initialStateForFilmDetailIsFetching = null;
+export const filmDetailIsFetching = (state = initialStateForFilmDetailIsFetching, action) => {
+    switch (action.type) {
+        case FILMS_DETAIL_FETCHING:
+        {return true}
+        case FILMS_DETAIL_FETCHING_FAILURE:
+        case FILMS_DETAIL_FETCHING_SUCCESS:
         {
             return false;
         }

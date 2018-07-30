@@ -7,7 +7,8 @@ import Routers from './routes'
 import rootReducer from "./reducers"
 
 let currentUser, popularFilms,
-filmDetail,genres,favouriteFilms,multiSearch,myFavourites,isFetching,popularFilmsIsFetching,genresIsFetching;
+    filmDetail, genres, favouriteFilms, multiSearch, myFavourites, isFetching, popularFilmsIsFetching, genresIsFetching,
+    filmDetailIsFetching;
 try {
     currentUser = JSON.parse(localStorage.getItem('user'));
     popularFilms = JSON.parse(localStorage.getItem('films'));
@@ -18,6 +19,7 @@ try {
     myFavourites=JSON.parse(localStorage.getItem('myFavourites'));
     popularFilmsIsFetching=JSON.parse(localStorage.getItem('popularFilmsIsFetching'));
     genresIsFetching=JSON.parse(localStorage.getItem('genresIsFetching'));
+    filmDetailIsFetching = JSON.parse(localStorage.getItem('filmDetailIsFetching'));
 } catch (e) {
     currentUser = null;
     popularFilms = null;
@@ -28,10 +30,22 @@ try {
     myFavourites=null;
     popularFilmsIsFetching=false;
     genresIsFetching=false;
+    filmDetailIsFetching = false;
 
 }
 const store = createStore(rootReducer, {
-    currentUser,isFetching, popularFilms,filmDetail,genres,favouriteFilms,multiSearch,myFavourites,popularFilmsIsFetching,genresIsFetching}, applyMiddleware(thunk));
+    currentUser,
+    isFetching,
+    popularFilms,
+    filmDetail,
+    genres,
+    favouriteFilms,
+    multiSearch,
+    myFavourites,
+    popularFilmsIsFetching,
+    genresIsFetching,
+    filmDetailIsFetching
+}, applyMiddleware(thunk));
 store.subscribe(() => console.log(store.getState()));
 
 ReactDOM.render(
