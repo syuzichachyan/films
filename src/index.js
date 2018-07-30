@@ -8,7 +8,7 @@ import rootReducer from "./reducers"
 
 let currentUser, popularFilms,
     filmDetail, genres, favouriteFilms, multiSearch, myFavourites, isFetching, popularFilmsIsFetching, genresIsFetching,
-    filmDetailIsFetching;
+    filmDetailIsFetching,multiSearchIsFetching,searchText;
 try {
     currentUser = JSON.parse(localStorage.getItem('user'));
     popularFilms = JSON.parse(localStorage.getItem('films'));
@@ -20,6 +20,8 @@ try {
     popularFilmsIsFetching=JSON.parse(localStorage.getItem('popularFilmsIsFetching'));
     genresIsFetching=JSON.parse(localStorage.getItem('genresIsFetching'));
     filmDetailIsFetching = JSON.parse(localStorage.getItem('filmDetailIsFetching'));
+    multiSearchIsFetching = JSON.parse(localStorage.getItem('multiSearchIsFetching'));
+    searchText = JSON.parse(localStorage.getItem('searchText'));
 } catch (e) {
     currentUser = null;
     popularFilms = null;
@@ -31,11 +33,12 @@ try {
     popularFilmsIsFetching=false;
     genresIsFetching=false;
     filmDetailIsFetching = false;
+    multiSearchIsFetching=false;
+    searchText="";
 
 }
 const store = createStore(rootReducer, {
     currentUser,
-    isFetching,
     popularFilms,
     filmDetail,
     genres,
@@ -44,7 +47,9 @@ const store = createStore(rootReducer, {
     myFavourites,
     popularFilmsIsFetching,
     genresIsFetching,
-    filmDetailIsFetching
+    filmDetailIsFetching,
+    multiSearchIsFetching,
+    searchText
 }, applyMiddleware(thunk));
 store.subscribe(() => console.log(store.getState()));
 

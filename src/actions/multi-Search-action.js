@@ -1,4 +1,4 @@
-import {MULTI_SEARCH_FETCHING_FAILURE, MULTI_SEARCH_FETCHING_SUCCESS} from "../constants/actions";
+import {SEARCH_TEXT,MULTI_SEARCH_FETCHING,MULTI_SEARCH_FETCHING_FAILURE, MULTI_SEARCH_FETCHING_SUCCESS} from "../constants/actions";
 export function multiSearchFetchingSuccess(films) {
     return {
         type: MULTI_SEARCH_FETCHING_SUCCESS,
@@ -10,7 +10,15 @@ export function multiSearchFetchingFailure() {
         type: MULTI_SEARCH_FETCHING_FAILURE
     }
 }
-export const multiSearch = (key,page) => (dispatch, getState) => {
+export function searchText(search) {
+    return {
+        type: SEARCH_TEXT,
+        payload: search
+    }
+}
+
+export const multiSearch = (key,page=1) => (dispatch, getState) => {
+    dispatch({type:MULTI_SEARCH_FETCHING});
     return(fetch(`https://api.themoviedb.org/3/search/multi?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US&query=${key}&page=${page}&include_adult=false`).then(films => films.json()).then(films => {
         localStorage.setItem("multiSearch",JSON.stringify(films));
         return dispatch(multiSearchFetchingSuccess(films))

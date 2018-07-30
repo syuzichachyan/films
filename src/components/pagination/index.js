@@ -1,24 +1,30 @@
 import React, {Component} from 'react';
 
+
 class Pegination extends Component{
     constructor(props){
         super(props);
     }
 
     nextPage=()=> {
-
-    this.props.filmsWithPage(+this.props.page + 1)
-}
+        if (this.props.search)
+            this.props.multiSearchFunction(this.props.searchText, +this.props.searchPage + 1);
+        else
+            this.props.filmsWithPage(+this.props.page + 1)
+    };
     prevPage=()=> {
 
-        this.props.filmsWithPage(+this.props.page - 1)
-    }
+        if (this.props.search)
+            this.props.multiSearchFunction(this.props.searchText, +this.props.searchPage - 1);
+        else
+            this.props.filmsWithPage(+this.props.page - 1)
+    };
 
     render(){
-        const {page}=this.props;
+        const {page,searchPage}=this.props;
         return(
             <div style={{textAlign:"center"}}>
-                {page>1?<span style={{
+                {(page>1 ||(this.props.search &&  searchPage>1))?<span style={{
                     display: "inline-block",
                     padding: "5px 14px",
                     backgroundColor: "#fff",

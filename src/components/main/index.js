@@ -16,13 +16,13 @@ class Main extends Component{
 
     render(){
         return (
-            (this.props.popularFilmsIsFetching===false && this.props.genresIsFetching===false)?
+
                 (<div>
             <Header/>
             <Films search={this.props.location.search}/>
-             <Pegination page={this.props.page}/>
+             <Pegination search={this.props.location.search} />
             </div>
-                ) : (<div>Wait</div>))
+                ))
 
 
     }

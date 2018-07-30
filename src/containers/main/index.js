@@ -12,19 +12,5 @@ const mapDispatchToProps = (dispatch) => {
 
     }
 };
-const mapStateToProps=(state)=>{
-    return {
-        popularFilmsIsFetching:state.popularFilmsIsFetching,
-        genresIsFetching:state.genresIsFetching,
-        page:state.popularFilms?state.popularFilms.page:1
 
-    }
-};
-
-
-
-
-
-
-
-export default connect(mapStateToProps,mapDispatchToProps)(Main);
+export default connect(null,mapDispatchToProps)(Main);

@@ -17,7 +17,8 @@ import {
     LOGOUT_REQUEST_SUCCESS,
     MULTI_SEARCH_FETCHING_FAILURE,
     MULTI_SEARCH_FETCHING_SUCCESS,
-    MY_FAVOURITES_FETCHING_SUCCESS
+    MY_FAVOURITES_FETCHING_SUCCESS,
+    MULTI_SEARCH_FETCHING, SEARCH_TEXT
 } from '../constants/actions'
 
 const initialState=null;
@@ -156,6 +157,31 @@ export const filmDetailIsFetching = (state = initialStateForFilmDetailIsFetching
         {
             return false;
         }
+        default :
+            return state;
+    }
+};
+
+const initialStateForMultiSearchIsFetching = null;
+export const multiSearchIsFetching = (state = initialStateForMultiSearchIsFetching, action) => {
+    switch (action.type) {
+        case MULTI_SEARCH_FETCHING:
+        {return true}
+        case MULTI_SEARCH_FETCHING_FAILURE:
+        case MULTI_SEARCH_FETCHING_SUCCESS:
+        {
+            return false;
+        }
+        default :
+            return state;
+    }
+};
+
+const initialStateForSearchText = null;
+export const searchText = (state = initialStateForSearchText, action) => {
+    switch (action.type) {
+        case SEARCH_TEXT:
+        {return action.payload}
         default :
             return state;
     }

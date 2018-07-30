@@ -26,12 +26,13 @@ class Header extends Component{
     onKeyDown = (e) => {
         if (e.keyCode === 13 && e.target.value.trim() !== "")
         {    const params={
-                key:e.target.value.trim(),
-                page:1
+                key:e.target.value.trim()
             };
-            this.props.multiSearchFunction(params.key, params.page);
+            this.props.multiSearchFunction(params.key,1);
             let queryString = this.props.location.pathname + '?' + propertyToUrl(params);
             this.props.history.push(queryString);
+            this.props.searchTextCreator(e.target.value.trim());
+
         }
 
     };
