@@ -38,7 +38,7 @@ class Header extends Component{
     };
     render(){
         return(
-                <Navbar color="blue" dark expand="md" scrolling>
+                <Navbar color="black" dark expand="md" scrolling>
                     <NavbarBrand href="/main">
                         <strong>Home</strong>
                     </NavbarBrand>
@@ -55,7 +55,7 @@ class Header extends Component{
                             <i style={{color:"white",paddingRight:"15px"}} className="fa fa-user"> {this.props.email}</i>
                         </NavItem>
                         <NavItem>
-                            <span  style={{cursor:"pointer"}} onClick={this.props.logout}>Logout</span>
+                            <span  style={{cursor:"pointer",color:"white"}} onClick={this.props.logout}>Logout</span>
                         </NavItem>
                     </NavbarNav>
                 </Navbar>

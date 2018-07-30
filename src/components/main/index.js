@@ -17,7 +17,7 @@ class Main extends Component{
     render(){
         return (
 
-                (<div>
+                (<div style={{ backgroundImage: 'url(https://mdbootstrap.com/img/Photos/Others/pricing-table7.jpg)'}}>
             <Header/>
             <Films search={this.props.location.search}/>
              <Pegination search={this.props.location.search} />
