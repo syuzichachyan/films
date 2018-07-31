@@ -7,7 +7,7 @@ import {multiSearchIsFetching} from "../../reducers/global-reducer";
 
 const mapStateToProps = (state) => {
     return {
-        films: state.popularFilms.results,
+        films: state.popularFilms,
         multiSearch:state.multiSearch,
         multiSearchIsFetching:state.multiSearchIsFetching,
         popularFilmsIsFetching:state.popularFilmsIsFetching,

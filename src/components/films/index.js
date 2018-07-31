@@ -12,7 +12,7 @@ class Films extends Component {
     render() {
         if(this.props.popularFilmsIsFetching===false && this.props.genresIsFetching===false && !this.props.multiSearchIsFetching) {
             const {films, search, multiSearch} = this.props;
-            const tempFilms = search ? multiSearch.results : films;
+            const tempFilms = search ? multiSearch.results : films.results;
             return (<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: "center"}}>
                     {tempFilms.map((item, index) => <Film film={item} key={index}/>)}
                 </div>
