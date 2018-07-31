@@ -1,20 +1,24 @@
 import React, {Component} from 'react'
-import {propertyToUrl, urlToProperty, urlToList}
-    from "query-string-params";
 import Film from '../../containers/film';
-import {multiSearchIsFetching} from "../../reducers/global-reducer";
+import {withRouter} from 'react-router-dom'
+
 
 class Films extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount(){
+        this.props.genres();
+        this.props.filmsWithPage(this.props.page);/*stugvi searchna te @ndhanur*/
 
+    }
     render() {
-        if(this.props.popularFilmsIsFetching===false && this.props.genresIsFetching===false && !this.props.multiSearchIsFetching) {
-            const {films, search, multiSearch} = this.props;
-            const tempFilms = search ? multiSearch.results : films.results;
+        if(!this.props.popularFilmsIsFetching && this.props.genresIsFetching===false && !this.props.multiSearchIsFetching && !this.props.myFavouritesIsFetching) {
+            const {favouriteFilms,films, search, multiSearch} = this.props;
+            const isFavourite=this.props.location.pathname==="/favourites";
+            const tempFilms = search ? multiSearch.results:isFavourite?favouriteFilms: films.results;
             return (<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: "center"}}>
-                    {tempFilms.map((item, index) => <Film film={item} key={index}/>)}
+                    {tempFilms.map((item, index) => <Film film={item} key={item.id}  />)}
                 </div>
             )
         }
@@ -23,4 +27,4 @@ class Films extends Component {
     }
 }
 
-export default Films;
+export default withRouter(Films);

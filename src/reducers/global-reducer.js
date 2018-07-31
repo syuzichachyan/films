@@ -18,7 +18,7 @@ import {
     MULTI_SEARCH_FETCHING_FAILURE,
     MULTI_SEARCH_FETCHING_SUCCESS,
     MY_FAVOURITES_FETCHING_SUCCESS,
-    MULTI_SEARCH_FETCHING, SEARCH_TEXT
+    MULTI_SEARCH_FETCHING, SEARCH_TEXT, MY_FAVOURITES_FETCHING_FAILURE,MY_FAVOURITES_FETCHING
 } from '../constants/actions'
 
 const initialState=null;
@@ -109,11 +109,10 @@ export const multiSearch = (state = initialStateForMultiSearch, action) => {
 const initialStateForMyFavourites = [];
 export const getMyFavourites = (state = initialStateForMyFavourites, action) => {
     switch (action.type) {
-        case MY_FAVOURITES_FETCHING_SUCCESS : {
-            return action.payload
-        }
-        case MULTI_SEARCH_FETCHING_FAILURE: {
-            return initialStateForMyFavourites;
+
+        case MY_FAVOURITES_FETCHING_SUCCESS:
+        case FAVOURITE_FILMS: {
+            return  action.payload;
         }
         default : return state;
     }
@@ -125,7 +124,7 @@ export const popularFilmsIsFetching = (state = initialStateForPopularFilmsIsFetc
         {return true}
         case FILMS_FETCHING_FAILURE:
         case FILMS_FETCHING_SUCCESS:
-         {
+        {
             return false;
         }
         default :
@@ -182,6 +181,21 @@ export const searchText = (state = initialStateForSearchText, action) => {
     switch (action.type) {
         case SEARCH_TEXT:
         {return action.payload}
+        default :
+            return state;
+    }
+};
+
+const initialStateForMyFavouritesIsFetching = null;
+export const myFavouritesIsFetching = (state = initialStateForMyFavouritesIsFetching, action) => {
+    switch (action.type) {
+        case MY_FAVOURITES_FETCHING:
+        {return true}
+        case MY_FAVOURITES_FETCHING_FAILURE:
+        case MY_FAVOURITES_FETCHING_SUCCESS:
+        {
+            return false;
+        }
         default :
             return state;
     }

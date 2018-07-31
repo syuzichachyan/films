@@ -29,22 +29,25 @@ class Header extends Component{
                 key:e.target.value.trim()
             };
             this.props.multiSearchFunction(params.key,1);
-            let queryString = this.props.location.pathname + '?' + propertyToUrl(params);
+            let queryString = '/main?' + propertyToUrl(params);
             this.props.history.push(queryString);
             this.props.searchTextCreator(e.target.value.trim());
 
         }
 
     };
+    homePage=()=>{
+        this.props.history.push('/main');
+    };
     render(){
         return(
                 <Navbar color="black" dark expand="md" scrolling>
-                    <NavbarBrand href="/main">
+                    <NavbarBrand onClick={this.homePage} style={{color:"white"}}>
                         <strong>Home</strong>
                     </NavbarBrand>
                     <NavbarNav left>
                         <NavItem>
-                            <NavLink to="/">Favourites</NavLink>
+                            <NavLink to="/favourites">Favourites</NavLink>
                         </NavItem>
                         <NavItem >
                             <input className="form-control" type="text" placeholder="Search" aria-label="Search" onKeyDown={this.onKeyDown}  />

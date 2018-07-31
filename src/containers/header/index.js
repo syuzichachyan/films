@@ -12,7 +12,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         logout:()=>dispatch(logout()),
         multiSearchFunction: (key,page) => dispatch(multiSearch(key,page)),
-        searchTextCreator:(search)=>dispatch(searchText(search))
+        searchTextCreator:(search)=>dispatch(searchText(search)),
+
 
 
 

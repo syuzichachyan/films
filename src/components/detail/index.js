@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import StarRatingComponent from 'react-star-rating-component';
-import { }  from 'prop-types';
 import Header from '../../containers/header'
 import './style.css'
 

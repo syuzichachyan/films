@@ -2,7 +2,6 @@ import React from 'react'
 import Film from '../../components/film'
 import {connect} from 'react-redux'
 import {addOrDelete,getMyFavourites} from "../../actions/favourite_films_action";
-import {filmDetailIsFetching} from "../../reducers/global-reducer";
 const mapStateToProps = (state) => {
     return {
         genres: state.genres,
@@ -12,7 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         addOrDelete:(filmId)=>dispatch(addOrDelete(filmId)),
-        getMyFavourites:(arr)=>dispatch(getMyFavourites(arr))
+        getMyFavourites:()=>dispatch(getMyFavourites())
     }
 };
 

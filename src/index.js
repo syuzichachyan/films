@@ -7,7 +7,7 @@ import Routers from './routes'
 import rootReducer from "./reducers"
 
 let currentUser, popularFilms,
-    filmDetail, genres, favouriteFilms, multiSearch, myFavourites, isFetching, popularFilmsIsFetching, genresIsFetching,
+    filmDetail, genres, favouriteFilms, multiSearch, getMyFavourites, isFetching, popularFilmsIsFetching, genresIsFetching,
     filmDetailIsFetching,multiSearchIsFetching,searchText;
 try {
     currentUser = JSON.parse(localStorage.getItem('user'));
@@ -16,7 +16,7 @@ try {
     genres=JSON.parse(localStorage.getItem('genres'));
     favouriteFilms=JSON.parse(localStorage.getItem('favouriteFilms'))|| [];
     multiSearch=JSON.parse(localStorage.getItem('multiSearch'));
-    myFavourites=JSON.parse(localStorage.getItem('myFavourites'));
+    getMyFavourites=JSON.parse(localStorage.getItem('myFavourites'));
     popularFilmsIsFetching=JSON.parse(localStorage.getItem('popularFilmsIsFetching'));
     genresIsFetching=JSON.parse(localStorage.getItem('genresIsFetching'));
     filmDetailIsFetching = JSON.parse(localStorage.getItem('filmDetailIsFetching'));
@@ -29,7 +29,7 @@ try {
     genres=null;
     favouriteFilms=null;
     multiSearch=null;
-    myFavourites=null;
+    getMyFavourites=null;
     popularFilmsIsFetching=false;
     genresIsFetching=false;
     filmDetailIsFetching = false;
@@ -44,7 +44,7 @@ const store = createStore(rootReducer, {
     genres,
     favouriteFilms,
     multiSearch,
-    myFavourites,
+    getMyFavourites,
     popularFilmsIsFetching,
     genresIsFetching,
     filmDetailIsFetching,

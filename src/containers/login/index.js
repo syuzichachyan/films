@@ -1,9 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Login from '../../components/login';
-import {login,isFetching} from '../../actions/login-action'
+import {login} from '../../actions/login-action'
 import {selectIsAuthenticated} from '../../selectors'
-import {filmsWithPage} from "../../actions/popularFilms-action";
 
 const mapStateToProps = (state) => {
     return {

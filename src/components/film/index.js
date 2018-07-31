@@ -10,8 +10,14 @@ class Film extends Component {
         return this.props.favouriteFilms.indexOf(id) !== -1;
     };
 
+    editFavourites=()=>{
+        this.props.addOrDelete(this.props.film.id);
+        this.props.getMyFavourites();
+    };
+
     render() {
         const {film,genres} = this.props;
+        const genres1=film.genre_ids || film.genres;
         const flag = this.isFavourite(film.id);
         return (
 
@@ -24,8 +30,8 @@ class Film extends Component {
                         <h5 className="card-title">{film.title} <i className="fa fa-heart" aria-hidden="true"
                                                                    title={`${flag ? "Delete film from Foavourite films list" : "Add film to Favourite films list"}`}
                                                                    style={{color: `${flag ? "orange" : "black"}`}}
-                                                                   onClick={ () => {this.props.addOrDelete(film.id);this.props.getMyFavourites(this.props.favouriteFilms)}}> </i></h5>
-                         {film.genre_ids.map((id) => (
+                                                                   onClick={this.editFavourites}> </i></h5>
+                        {genres1.map((id) => (
                             <span className="card-title" key={id}>
                                {genres.find(el=>{return el.id===id})?genres.find(el=>{return el.id===id}).name +" ":" "}
                             </span>

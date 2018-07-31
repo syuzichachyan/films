@@ -8,18 +8,18 @@ class Main extends Component{
     constructor(props){
         super(props);
     }
-    componentDidMount(){
-        this.props.genres();
-        this.props.filmsWithPage(this.props.page);/*stugvi searchna te @ndhanur*/
 
-    }
+    isFavourite=()=>{
+      console.log( this.props.match.pathname);
+      return this.props.match.pathname.contains("favourites");    }
 
     render(){
         return (
 
+
                 (<div style={{ backgroundImage: 'url(https://mdbootstrap.com/img/Photos/Others/pricing-table7.jpg)'}}>
             <Header/>
-            <Films search={this.props.location.search}/>
+            <Films search={this.props.location.search} isFavourite={this.isFavourite}/>
              <Pegination search={this.props.location.search} />
             </div>
                 ))

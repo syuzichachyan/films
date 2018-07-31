@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 import  {reducer as formReducer} from 'redux-form'
-import {searchText,multiSearchIsFetching,filmDetailIsFetching,genresIsFetching,popularFilmsIsFetching,currentUser,popularFilms,filmDetail,genres,favouriteFilms,multiSearch,getMyFavourites} from './global-reducer';
+import {myFavouritesIsFetching,searchText,multiSearchIsFetching,filmDetailIsFetching,genresIsFetching,popularFilmsIsFetching,currentUser,popularFilms,filmDetail,genres,favouriteFilms,multiSearch,getMyFavourites} from './global-reducer';
 
 
 export default combineReducers({
@@ -16,7 +16,6 @@ export default combineReducers({
     genresIsFetching,
     filmDetailIsFetching,
     multiSearchIsFetching,
-    searchText
-
-
+    searchText,
+    myFavouritesIsFetching
 })

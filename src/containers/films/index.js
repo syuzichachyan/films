@@ -2,8 +2,6 @@ import React from 'react'
 import Films from '../../components/films'
 import {connect} from 'react-redux'
 import {filmsWithPage, genres} from "../../actions/popularFilms-action";
-import {multiSearch} from "../../actions/multi-Search-action";
-import {multiSearchIsFetching} from "../../reducers/global-reducer";
 
 const mapStateToProps = (state) => {
     return {
@@ -12,6 +10,15 @@ const mapStateToProps = (state) => {
         multiSearchIsFetching:state.multiSearchIsFetching,
         popularFilmsIsFetching:state.popularFilmsIsFetching,
         genresIsFetching:state.genresIsFetching,
+        myFavouritesIsFetching:state.multiSearchIsFetching,
+        favouriteFilms:state.getMyFavourites
+    }
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        filmsWithPage:(page)=>dispatch(filmsWithPage(page)),
+        genres:()=>dispatch(genres())
+
     }
 };
 
@@ -20,4 +27,4 @@ const mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps)(Films);
+export default connect(mapStateToProps,mapDispatchToProps)(Films);

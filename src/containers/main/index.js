@@ -7,8 +7,7 @@ import {genresIsFetching} from "../../reducers/global-reducer";
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        filmsWithPage:(page)=>dispatch(filmsWithPage(page)),
-        genres:()=>dispatch(genres())
+
 
     }
 };
