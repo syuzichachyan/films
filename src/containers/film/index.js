@@ -1,11 +1,11 @@
-import React from 'react'
 import Film from '../../components/film'
 import {connect} from 'react-redux'
 import {addOrDelete,getMyFavourites} from "../../actions/favourite_films_action";
 const mapStateToProps = (state) => {
     return {
         genres: state.genres,
-        favouriteFilms:state.favouriteFilms
+        favouriteFilms:state.favouriteFilms,
+        myFavouritesIsFetching:state.myFavouritesIsFetching
     }
 };
 const mapDispatchToProps = (dispatch) => {

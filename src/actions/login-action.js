@@ -1,4 +1,3 @@
-import React from 'react'
 import {LOGIN_REQUEST, LOGIN_REQUEST_FAILURE, LOGIN_REQUEST_SUCCESS} from '../constants/actions';
 
 export function loginSuccess(user){

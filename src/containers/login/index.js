@@ -1,4 +1,3 @@
-import React from 'react';
 import {connect} from 'react-redux';
 import Login from '../../components/login';
 import {login} from '../../actions/login-action'

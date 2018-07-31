@@ -17,11 +17,9 @@ class Film extends Component {
 
     render() {
         const {film,genres} = this.props;
-        const genres1=film.genre_ids || film.genres;
+        const genres1=film.hasOwnProperty('genre_ids')?film.genre_ids:film.genres;
         const flag = this.isFavourite(film.id);
-        return (
-
-            <div className="col-md-2" style={{margin: "10px"}}>
+        return (<div className="col-md-2" style={{margin: "10px"}}>
                 <div className="card" >
                     <img
                         src={`https://image.tmdb.org/t/p/w200/${film.poster_path}`}
@@ -31,7 +29,7 @@ class Film extends Component {
                                                                    title={`${flag ? "Delete film from Foavourite films list" : "Add film to Favourite films list"}`}
                                                                    style={{color: `${flag ? "orange" : "black"}`}}
                                                                    onClick={this.editFavourites}> </i></h5>
-                        {genres1.map((id) => (
+                        {genres1.map((id,index) => (
                             <span className="card-title" key={id}>
                                {genres.find(el=>{return el.id===id})?genres.find(el=>{return el.id===id}).name +" ":" "}
                             </span>
@@ -46,8 +44,7 @@ class Film extends Component {
                         </p>
                     </div>
                 </div>
-            </div>
-        )
+            </div>)
     }
 }
 

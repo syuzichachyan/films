@@ -4,21 +4,19 @@ import {withRouter} from 'react-router-dom'
 
 
 class Films extends Component {
-    constructor(props) {
-        super(props);
-    }
     componentDidMount(){
         this.props.genres();
-        this.props.filmsWithPage(this.props.page);/*stugvi searchna te @ndhanur*/
+        if(this.props.location.pathname.indexOf("main")!==-1)
+        this.props.filmsWithPage(this.props.page);
 
     }
     render() {
-        if(!this.props.popularFilmsIsFetching && this.props.genresIsFetching===false && !this.props.multiSearchIsFetching && !this.props.myFavouritesIsFetching) {
+        if(this.props.popularFilmsIsFetching===false && this.props.genresIsFetching===false && !this.props.multiSearchIsFetching && !this.props.myFavouritesIsFetching) {
             const {favouriteFilms,films, search, multiSearch} = this.props;
             const isFavourite=this.props.location.pathname==="/favourites";
             const tempFilms = search ? multiSearch.results:isFavourite?favouriteFilms: films.results;
             return (<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: "center"}}>
-                    {tempFilms.map((item, index) => <Film film={item} key={item.id}  />)}
+                    {tempFilms.map((item,index) => <Film film={item} key={index}  />)}
                 </div>
             )
         }

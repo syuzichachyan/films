@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 
 
 class Pegination extends Component{
-    constructor(props){
-        super(props);
-    }
-
     nextPage=()=> {
         if (this.props.search)
             this.props.multiSearchFunction(this.props.searchText, +this.props.searchPage + 1);

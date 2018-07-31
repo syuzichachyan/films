@@ -1,8 +1,7 @@
 import {
-    ADD_FAVOURITE_FILM, DELETE_FAVOURITE_FILM, FAVOURITE_FILMS, MY_FAVOURITES_FETCHING,
+    ADD_FAVOURITE_FILM, DELETE_FAVOURITE_FILM, MY_FAVOURITES_FETCHING,
     MY_FAVOURITES_FETCHING_FAILURE, MY_FAVOURITES_FETCHING_SUCCESS
 } from '../constants/actions';
-import {filmDetail} from "./popularFilms-action";
 
 export const addToFavouriteFilms = (filmId) => {
     return {
@@ -14,13 +13,6 @@ export const deleteFromFavouriteFilms = (filmId) => {
     return {
         type: DELETE_FAVOURITE_FILM,
         payload: filmId
-    }
-};
-
-export const FavouriteFilms = (films) => {
-    return {
-        type: FAVOURITE_FILMS,
-        payload: films
     }
 };
 export const myFavourites = (myFavourites) => {
@@ -51,16 +43,15 @@ export const getMyFavourites=()=>(dispatch,getState)=>{
     const arr=[];
     dispatch({type:MY_FAVOURITES_FETCHING});
     favouriteFilms.forEach(el=>{
-        fetch(`https://api.themoviedb.org/3/movie/${el}?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US`).then(film => film.json()).then(film=>{arr.push(film)
+        fetch(`https://api.themoviedb.org/3/movie/${el}?api_key=${apiKey.trim()}&language=en-US`).then(film => film.json()).then(film=>{arr.push(film)
             localStorage.setItem("myFavourites",JSON.stringify(arr));
-
+            return dispatch(myFavourites(arr));
         }).catch(e=>{
             console.log(e);
           return  dispatch({type:MY_FAVOURITES_FETCHING_FAILURE});
         });
 
     })
-    dispatch(myFavourites(arr));
 
 
 

@@ -5,10 +5,6 @@ import Header from '../../containers/header';
 import Films from '../../containers/films';
 
 class Main extends Component{
-    constructor(props){
-        super(props);
-    }
-
     isFavourite=()=>{
       console.log( this.props.match.pathname);
       return this.props.match.pathname.contains("favourites");    }

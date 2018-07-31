@@ -1,4 +1,3 @@
-import React from 'react'
 import {FILMS_DETAIL_FETCHING,GENRES_DETAIL,FILMS_FETCHING,FILMS_FETCHING_FAILURE, FILMS_FETCHING_SUCCESS,FILMS_DETAIL_FETCHING_FAILURE,FILMS_DETAIL_FETCHING_SUCCESS,GENRES_DETAIL_FETCHING_FAILURE,GENRES_DETAIL_FETCHING_SUCCESS,MULTI_SEARCH_FETCHING_FAILURE,MULTI_SEARCH_FETCHING_SUCCESS} from '../constants/actions'
 
 export function popularFilmsFetchingSuccess(films) {
@@ -48,9 +47,10 @@ export function multiSearchFetchingFailure() {
 }
 
 export const genres = () => (dispatch,getState ) => {
-    dispatch({type:GENRES_DETAIL});
     const apiKey=getState().currentUser.apiKey;
-    return(fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US`).then(genres => genres.json()).then(genres=>genres.genres).then(genres => {
+
+    dispatch({type:GENRES_DETAIL});
+    return(fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey.trim()}&language=en-US`).then(genres => genres.json()).then(genres=>genres.genres).then(genres => {
         localStorage.setItem("genres",JSON.stringify(genres));
         return dispatch(genresFetchingSuccess(genres))
     }).catch(error => {
@@ -60,8 +60,9 @@ export const genres = () => (dispatch,getState ) => {
 };
 
 export const filmsWithPage = (page=1) => (dispatch,getState) => {
+    const apiKey=getState().currentUser.apiKey;
     dispatch({type:FILMS_FETCHING});
-    return(fetch(`https://api.themoviedb.org/3/movie/popular?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US&page=${page}`).then(films => films.json()).then(films => {
+    return(fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey.trim()}&language=en-US&page=${page}`).then(films => films.json()).then(films => {
         localStorage.setItem("films",JSON.stringify(films));
          dispatch(popularFilmsFetchingSuccess(films))
     }).catch(error => {
@@ -69,9 +70,11 @@ export const filmsWithPage = (page=1) => (dispatch,getState) => {
         dispatch(popularFilmsFetchingFailure())
     }))
 };
-export const filmDetail = (id) => (dispatch) => {
+export const filmDetail = (id) => (dispatch,getState) => {
+    const apiKey=getState().currentUser.apiKey;
+
     dispatch({type:FILMS_DETAIL_FETCHING});
-    return(fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=9f6ab5bfb7d10b1afe5d68bee350e4b6&language=en-US`).then(film => film.json()).then(film => {
+    return(fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey.trim()}&language=en-US`).then(film => film.json()).then(film => {
         localStorage.setItem("filmDetail",JSON.stringify(film));
          dispatch(filmDetailFetchingSuccess(film))
     }).catch(error => {

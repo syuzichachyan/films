@@ -1,4 +1,3 @@
-import React  from 'react';
 import {connect} from 'react-redux';
 import Detail from '../../components/detail'
 import {filmDetail} from "../../actions/popularFilms-action";

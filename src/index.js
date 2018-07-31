@@ -7,7 +7,7 @@ import Routers from './routes'
 import rootReducer from "./reducers"
 
 let currentUser, popularFilms,
-    filmDetail, genres, favouriteFilms, multiSearch, getMyFavourites, isFetching, popularFilmsIsFetching, genresIsFetching,
+    filmDetail, genres, favouriteFilms, multiSearch, getMyFavourites, popularFilmsIsFetching, genresIsFetching,
     filmDetailIsFetching,multiSearchIsFetching,searchText;
 try {
     currentUser = JSON.parse(localStorage.getItem('user'));

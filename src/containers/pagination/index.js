@@ -1,7 +1,6 @@
-import React,{Component} from 'react';
 import {connect} from 'react-redux'
 import Pagination from '../../components/pagination';
-import {multiSearch,searchText} from "../../actions/multi-Search-action";
+import {multiSearch} from "../../actions/multi-Search-action";
 import {filmsWithPage} from "../../actions/popularFilms-action";
 
 

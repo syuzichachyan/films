@@ -1,15 +1,9 @@
 import React, {Component} from 'react'
 import {propertyToUrl} from "query-string-params";
 import {
-    Collapse,
-    Dropdown,
-    DropdownItem,
-    DropdownMenu,
-    DropdownToggle,
     Navbar,
     NavbarBrand,
     NavbarNav,
-    NavbarToggler,
     NavItem,
     NavLink
 } from 'mdbreact';
@@ -19,9 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
 class Header extends Component{
-    constructor(props){
-        super(props);
-    }
 
     onKeyDown = (e) => {
         if (e.keyCode === 13 && e.target.value.trim() !== "")

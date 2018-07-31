@@ -1,4 +1,3 @@
-import React from 'react'
 import   {LOGOUT_REQUEST_SUCCESS} from '../constants/actions';
 
 export function logoutSuccess(){
@@ -9,9 +8,7 @@ export function logoutSuccess(){
 }
 
 export  const logout =()=>(dispatch,getState)=> {
-    localStorage.removeItem("user");
-    localStorage.removeItem("filmDetail");
-    localStorage.removeItem("favouriteFilms");
+    localStorage.clear();
     dispatch(logoutSuccess());
 
 };

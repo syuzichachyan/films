@@ -4,9 +4,8 @@ import {Redirect} from 'react-router-dom'
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import {Button, Card, CardBody, Col, Container, Fa, Input, ModalFooter, Row} from 'mdbreact';
+import {Button, Card, Col, Container, Row} from 'mdbreact';
 import './style.css'
-import {isFetching} from "../../reducers/global-reducer";
 
 class Login extends Component {
 
@@ -61,7 +60,7 @@ class Login extends Component {
                                         </form>
                                         <Col md="12">
                                             <p className="font-small white-text d-flex justify-content-end">Have an
-                                                account? <a href="#" className="green-text ml-1 font-weight-bold"> Log
+                                                account? <a href="/" className="green-text ml-1 font-weight-bold"> Log
                                                     in</a></p>
                                         </Col>
                                     </div>

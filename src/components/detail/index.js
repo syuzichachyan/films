@@ -6,10 +6,6 @@ import './style.css'
 
 
 class Detail extends Component {
-    constructor(props) {
-        super(props);
-
-    }
     isFavourite(id) {
         return this.props.favouriteFilms.indexOf(id) !== -1;
     };

@@ -1,4 +1,3 @@
-import React from 'react';
 import PrivateRoute from '../../routes/privateRoutes';
 import {connect} from 'react-redux';
 import {selectIsAuthenticated} from "../../selectors";
