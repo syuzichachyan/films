@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Film from '../../containers/film';
 import {withRouter} from 'react-router-dom'
+import Film from '../../containers/film';
 
 
 class Films extends Component {
@@ -16,7 +16,7 @@ class Films extends Component {
             const isFavourite=this.props.location.pathname==="/favourites";
             const tempFilms = search ? multiSearch.results:isFavourite?favouriteFilms: films.results;
             return (<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: "center"}}>
-                    {tempFilms.map((item,index) => <Film film={item} key={index}  />)}
+                    {tempFilms?tempFilms.map((item,index) => <Film film={item} key={item.id}  />):<div>There are not films</div>}
                 </div>
             )
         }

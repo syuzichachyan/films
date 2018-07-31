@@ -1,0 +1,9 @@
+i {
+    color: white;
+    padding-right: 15px
+}
+
+.logOut {
+    cursor: pointer;
+    color: white
+}

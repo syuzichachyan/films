@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import StarRatingComponent from 'react-star-rating-component';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import StarRatingComponent from 'react-star-rating-component';
+import './style.css'
 
 class Film extends Component {
     isFavourite(id) {

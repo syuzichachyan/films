@@ -6,6 +6,10 @@ import './style.css'
 
 
 class Detail extends Component {
+    constructor(props) {
+        super(props);
+
+    }
     isFavourite(id) {
         return this.props.favouriteFilms.indexOf(id) !== -1;
     };
@@ -21,7 +25,7 @@ class Detail extends Component {
 
                 <div>
                 <Header/>
-                <div style={{display: "flex", flexWrap: 'wrap'}}>
+                <div className="film">
                     <div className="card col-md-2">
                         <img className="card-img-top"
                              src={`https://image.tmdb.org/t/p/w200${filmInfo.poster_path}`}

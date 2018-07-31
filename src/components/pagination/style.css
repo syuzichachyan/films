@@ -1,0 +1,11 @@
+.pagination{
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 5px
+}
+.centerPosition{
+text-align:center
+}

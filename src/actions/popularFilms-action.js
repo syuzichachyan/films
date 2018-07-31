@@ -34,17 +34,6 @@ export function genresFetchingFailure(genres) {
     }
 }
 
-export function multiSearchFetchingSuccess(films) {
-    return {
-        type: MULTI_SEARCH_FETCHING_SUCCESS,
-        payload: films
-    }
-}
-export function multiSearchFetchingFailure() {
-    return {
-        type: MULTI_SEARCH_FETCHING_FAILURE
-    }
-}
 
 export const genres = () => (dispatch,getState ) => {
     const apiKey=getState().currentUser.apiKey;

@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {Field, reduxForm} from 'redux-form';
 import {Redirect} from 'react-router-dom'
+import {Button, Card, Col, Container, Row} from 'mdbreact';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import {Button, Card, Col, Container, Row} from 'mdbreact';
 import './style.css'
 
 class Login extends Component {

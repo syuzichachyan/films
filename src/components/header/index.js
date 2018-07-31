@@ -11,6 +11,7 @@ import {withRouter} from 'react-router-dom'
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+import './style.css'
 
 class Header extends Component{
 
@@ -46,10 +47,10 @@ class Header extends Component{
                     </NavbarNav>
                     <NavbarNav right>
                         <NavItem>
-                            <i style={{color:"white",paddingRight:"15px"}} className="fa fa-user"> {this.props.email}</i>
+                            <i className="fa fa-user"> {this.props.email}</i>
                         </NavItem>
                         <NavItem>
-                            <span  style={{cursor:"pointer",color:"white"}} onClick={this.props.logout}>Logout</span>
+                            <span className="logOut" onClick={this.props.logout}>Logout</span>
                         </NavItem>
                     </NavbarNav>
                 </Navbar>

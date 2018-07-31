@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './style.css'
 
 
 class Pegination extends Component{
@@ -19,25 +20,13 @@ class Pegination extends Component{
     render(){
         const {page,searchPage}=this.props;
         return(
-            <div style={{textAlign:"center"}}>
-                {(page>1 ||(this.props.search &&  searchPage>1))?<span style={{
-                    display: "inline-block",
-                    padding: "5px 14px",
-                    backgroundColor: "#fff",
-                    border: "1px solid #ddd",
-                    borderRadius: "15px",
-                    margin: "5px"
-                }} >
+            <div className="centerPosition">
+                {(page>1 ||(this.props.search &&  searchPage>1))?<span className="pagination">
                     <a onClick={this.prevPage}
                       >Previous</a>
                 </span>:null
                 }
-                <span style={{display: "inline-block",
-                    padding: "5px 14px",
-                    backgroundColor: "#fff",
-                    border: "1px solid #ddd",
-                    borderRadius: "15px",
-                    margin:"5px"}}>
+                <span className="pagination">
                     <a onClick={this.nextPage}
                     >Next</a></span>
             </div>
