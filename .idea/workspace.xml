@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad5a73b6-cb86-463b-a010-23b7956a4cc5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/actions/favourite_films_action.js" afterPath="$PROJECT_DIR$/src/actions/favourite_films_action.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/login-action.js" afterPath="$PROJECT_DIR$/src/actions/login-action.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/logout-action.js" afterPath="$PROJECT_DIR$/src/actions/logout-action.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/multi-Search-action.js" afterPath="$PROJECT_DIR$/src/actions/multi-Search-action.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/popularFilms-action.js" afterPath="$PROJECT_DIR$/src/actions/popularFilms-action.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/index.js" afterPath="$PROJECT_DIR$/src/components/detail/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/style.css" afterPath="$PROJECT_DIR$/src/components/detail/style.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/favourites/index.js" afterPath="$PROJECT_DIR$/src/components/favourites/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/film/index.js" afterPath="$PROJECT_DIR$/src/components/film/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/film/style.css" afterPath="$PROJECT_DIR$/src/components/film/style.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/films/index.js" afterPath="$PROJECT_DIR$/src/components/films/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/index.js" afterPath="$PROJECT_DIR$/src/components/header/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/style.css" afterPath="$PROJECT_DIR$/src/components/header/style.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/index.js" afterPath="$PROJECT_DIR$/src/components/login/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/style.css" afterPath="$PROJECT_DIR$/src/components/login/style.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/index.js" afterPath="$PROJECT_DIR$/src/components/main/index.js" />
       <change beforePath="$PROJECT_DIR$/src/components/main/style.css" afterPath="$PROJECT_DIR$/src/components/main/style.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/pagination/index.js" afterPath="$PROJECT_DIR$/src/components/pagination/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/pagination/style.css" afterPath="$PROJECT_DIR$/src/components/pagination/style.css" />
-      <change beforePath="$PROJECT_DIR$/src/constants/actions.js" afterPath="$PROJECT_DIR$/src/constants/actions.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/detail/index.js" afterPath="$PROJECT_DIR$/src/containers/detail/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/favourites/index.js" afterPath="$PROJECT_DIR$/src/containers/favourites/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/film/index.js" afterPath="$PROJECT_DIR$/src/containers/film/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/films/index.js" afterPath="$PROJECT_DIR$/src/containers/films/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/header/index.js" afterPath="$PROJECT_DIR$/src/containers/header/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/login/index.js" afterPath="$PROJECT_DIR$/src/containers/login/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/main/index.js" afterPath="$PROJECT_DIR$/src/containers/main/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pagination/index.js" afterPath="$PROJECT_DIR$/src/containers/pagination/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/privateRouter/index.js" afterPath="$PROJECT_DIR$/src/containers/privateRouter/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/global-reducer.js" afterPath="$PROJECT_DIR$/src/reducers/global-reducer.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.js" afterPath="$PROJECT_DIR$/src/routes/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/routes/privateRoutes/index.js" afterPath="$PROJECT_DIR$/src/routes/privateRoutes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -74,8 +41,18 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/main/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+            <state relative-caret-position="102">
+              <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/main/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -101,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/favourites/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -141,16 +118,6 @@
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/selectors/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -213,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/components/login/index.js" />
         <option value="$PROJECT_DIR$/src/components/login/style.css" />
         <option value="$PROJECT_DIR$/src/components/main/index.js" />
-        <option value="$PROJECT_DIR$/src/components/main/style.css" />
         <option value="$PROJECT_DIR$/src/components/pagination/index.js" />
         <option value="$PROJECT_DIR$/src/components/pagination/style.css" />
         <option value="$PROJECT_DIR$/src/constants/actions.js" />
@@ -234,6 +200,7 @@
         <option value="$PROJECT_DIR$/src/components/detail/index.js" />
         <option value="$PROJECT_DIR$/src/containers/favourites/index.js" />
         <option value="$PROJECT_DIR$/src/components/favourites/index.js" />
+        <option value="$PROJECT_DIR$/src/components/main/style.css" />
       </list>
     </option>
   </component>
@@ -534,12 +501,12 @@
       <workItem from="1533064198934" duration="1956000" />
       <workItem from="1533067135991" duration="6475000" />
       <workItem from="1533099697544" duration="1261000" />
-      <workItem from="1533101211304" duration="1937000" />
+      <workItem from="1533101211304" duration="2597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204788000" />
+    <option name="totallyTimeSpent" value="205448000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="7" />
@@ -994,14 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/main/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pagination/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1136,14 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/main/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pagination/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1186,11 +1137,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/favourites/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/main/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/main/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
