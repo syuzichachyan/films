@@ -5,17 +5,18 @@ import {selectIsAuthenticated} from '../../selectors'
 
 const mapStateToProps = (state) => {
     return {
-        email: state.form.login?state.form.login.hasOwnProperty("values")?state.form.login.values.email:"":"",
-        apiKey:state.form.login?state.form.login.hasOwnProperty("values")?state.form.login.values.apiKey:"":"",
-        isAuthenticated: selectIsAuthenticated(state)}
+        email: state.form.login ? state.form.login.hasOwnProperty("values") ? state.form.login.values.email : "" : "",
+        apiKey: state.form.login ? state.form.login.hasOwnProperty("values") ? state.form.login.values.apiKey : "" : "",
+        isAuthenticated: selectIsAuthenticated(state)
+    }
 };
 const mapDispatchToProps = (dispatch) => {
 
     return {
 
-        login:()=>dispatch(login()),
+        login: () => dispatch(login()),
 
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

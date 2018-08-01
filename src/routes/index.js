@@ -3,8 +3,8 @@ import {BrowserRouter as  Router, Route, Switch} from 'react-router-dom'
 import Login from '../containers/login';
 import Main from '../containers/main';
 import PrivateRoute from '../containers/privateRouter';
-import Detail  from '../containers/detail'
-import Favourites  from '../containers/favourites'
+import Detail from '../containers/detail'
+import Favourites from '../containers/favourites'
 
 
 class Routers extends Component {

@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import './style.css'
 
 
-class Pegination extends Component{
-    nextPage=()=> {
+class Pegination extends Component {
+    nextPage = () => {
         if (this.props.search)
             this.props.multiSearchFunction(this.props.searchText, +this.props.searchPage + 1);
         else
             this.props.filmsWithPage(+this.props.page + 1)
     };
-    prevPage=()=> {
+    prevPage = () => {
 
         if (this.props.search)
             this.props.multiSearchFunction(this.props.searchText, +this.props.searchPage - 1);
@@ -17,14 +17,14 @@ class Pegination extends Component{
             this.props.filmsWithPage(+this.props.page - 1)
     };
 
-    render(){
-        const {page,searchPage}=this.props;
-        return(
+    render() {
+        const {page, searchPage} = this.props;
+        return (
             <div className="centerPosition">
-                {(page>1 ||(this.props.search &&  searchPage>1))?<span className="pagination">
+                {(page > 1 || (this.props.search && searchPage > 1)) ? <span className="pagination">
                     <a onClick={this.prevPage}
-                      >Previous</a>
-                </span>:null
+                    >Previous</a>
+                </span> : null
                 }
                 <span className="pagination">
                     <a onClick={this.nextPage}
@@ -33,4 +33,5 @@ class Pegination extends Component{
         )
     }
 }
+
 export default Pegination;

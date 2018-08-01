@@ -3,15 +3,20 @@ import Header from '../../containers/header';
 import Films from '../../containers/films'
 
 class Favourites extends Component {
+    componentDidMount(){
+        this.props.getMyFavourites();
+
+    }
     render() {
         return (
-                (<div>
-                    <Header/>
-                    {!this.props.myFavouritesIsFetching ?
-                        (<Films favouriteFilms={this.props.favouriteFilms}/>) :
-                        <div>There are not favourites films</div>}
-                </div>))
+            (<div>
+                <Header/>
+                {!this.props.myFavouritesIsFetching ?
+                    (<Films favouriteFilms={this.props.favouriteFilms}/>) :
+                    <div>There are not favourites films</div>}
+            </div>))
     }
 }
+
 
 export default Favourites;
