@@ -1,4 +1,10 @@
-.main {
+.favourite {
+  width: 100%;
+  height: 100vh;
   background: linear-gradient(to bottom, rgba(0, 0, 0, .99) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%), url(../../images/movie-article.jpg)no-repeat center center fixed;
   background-size: cover;
+}
+.zeroFavourites{
+  text-align: center;
+  color:white;
 }
