@@ -6,21 +6,21 @@ import {filmsWithPage} from "../../actions/popularFilms-action";
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        filmsWithPage:(page)=>dispatch(filmsWithPage(page)),
-        multiSearchFunction: (key,page) => dispatch(multiSearch(key,page))
+        filmsWithPage: (page) => dispatch(filmsWithPage(page)),
+        multiSearchFunction: (key, page) => dispatch(multiSearch(key, page))
 
     }
 };
-const mapStateToProps=(state)=>{
+const mapStateToProps = (state) => {
     return {
-        page:state.popularFilms?state.popularFilms.page:1,
-        searchPage:state.multiSearch?state.multiSearch.page:1,
-        searchText:state.searchText
+        page: state.popularFilms ? state.popularFilms.page : 1,
+        searchPage: state.multiSearch ? state.multiSearch.page : 1,
+        searchText: state.searchText
 
     }
 };
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Pagination);
+export default connect(mapStateToProps, mapDispatchToProps)(Pagination);
 
 

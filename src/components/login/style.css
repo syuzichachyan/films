@@ -15,8 +15,9 @@
   -webkit-box-shadow: 0 1px 0 0 #00C851;
   box-shadow: 0 1px 0 0 #00C851;
 }
-.md-form input[type=email]{
-  color:white;
+
+.md-form input[type=email] {
+  color: white;
 }
 
 .md-form input[type=email]:focus:not([readonly]) + label {

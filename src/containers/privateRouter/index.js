@@ -4,10 +4,10 @@ import {selectIsAuthenticated} from "../../selectors";
 
 const mapStateToProps = (state) => {
     return {
-        currentUser:state.currentUser,
+        currentUser: state.currentUser,
         isAuthenticated: selectIsAuthenticated(state)
 
-}
+    }
 };
 
 

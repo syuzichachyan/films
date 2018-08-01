@@ -1,7 +1,8 @@
-.film{
-    display: flex;
-    flexWrap: wrap
+.film {
+  display: flex;
+  flexWrap: wrap
 }
-.logo{
-    width: 10%;
+
+.logo {
+  width: 10%;
 }
